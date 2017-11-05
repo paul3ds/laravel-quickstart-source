@@ -14,7 +14,7 @@ class FunctionalTest extends TestCase
     {
         $this->dontSeeInDatabase('tasks', ['name' => 'Task 1'])
             ->post('/task', ['name' => 'Task 1'])
-            ->assertResponseStatus(400)
+            ->assertResponseStatus(302)
             ->seeInDatabase('tasks', ['name' => 'Task 1']);
     }
 
